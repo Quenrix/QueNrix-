@@ -3,6 +3,8 @@ import { BrainCircuit, Sparkles, Bot, BarChart3, Database, Cloud, Settings2, Quo
 import ServiceCard from "@/Components/ServiceCard.jsx";
 import SectionHeading from "@/Components/SectionHeading.jsx";
 import StatCard from "@/Components/StatCard.jsx";
+import CardSlider from "@/Components/CardSlider.jsx";
+import { trainingToolCategories } from "@/data/trainingTools.js";
 
 // Placeholder image - replace with actual hero background
 const heroBg = "https://via.placeholder.com/1920x1080/6366f1/ffffff?text=Hero+Background";
@@ -38,6 +40,7 @@ const processSteps = [
   { step: "03", title: "Development", desc: "Our engineers build scalable, performant applications using cutting-edge technologies and industry best practices." },
   { step: "04", title: "Launch & Support", desc: "We deploy, test, and optimize your project, providing ongoing support and maintenance to ensure long-term success." },
 ];
+const toolCategories = trainingToolCategories.map(({ id, title }) => ({ id, title }));
 const Index = () => {
   return (
     <div className="min-h-screen bg-linear-to-b from-white to-slate-50">
@@ -142,37 +145,20 @@ const Index = () => {
               Click a category to open its detailed tools and learning information on the Training page.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {[
-              {
-                id: "cloud",
-                title: "Cloud",
-              },
-              {
-                id: "development",
-                title: "Development",
-              },
-              {
-                id: "data-ai",
-                title: "Data + Gen AI + Agentic AI",
-              },
-              {
-                id: "devops",
-                title: "DevOps",
-              },
-              {
-                id: "databases",
-                title: "Databases",
-              },
-            ].map((group) => (
-              <Link
-                key={group.id}
-                to={`/training#${group.id}`}
-                className="bg-white border border-slate-200 rounded-2xl p-6 min-h-55 flex items-center justify-center hover:border-primary/40 hover:shadow-lg transition-all text-center"
-              >
-                <h4 className="text-2xl xl:text-3xl font-extrabold text-slate-900 leading-tight wrap-break-word">{group.title}</h4>
-              </Link>
-            ))}
+          <div className="mt-10">
+            <CardSlider
+              items={toolCategories}
+              ariaLabel="Tools and technologies slider"
+              itemWidth="clamp(280px, 22vw, 340px)"
+              renderItem={(group) => (
+                <Link
+                  to={`/training#${group.id}`}
+                  className="bg-white border border-slate-200 rounded-2xl p-6 h-48 flex items-center justify-center hover:border-primary/40 hover:shadow-lg transition-all text-center"
+                >
+                  <h4 className="text-2xl xl:text-3xl font-extrabold text-slate-900 leading-tight">{group.title}</h4>
+                </Link>
+              )}
+            />
           </div>
         </div>
       </section>
@@ -257,21 +243,22 @@ const Index = () => {
             title="What Our Clients Say" 
             description="Don't just take our word for it — hear from the businesses we've helped transform." 
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            {testimonials.map((t, i) => (
-              <div 
-                key={i} 
-                className="group bg-white border border-slate-200 rounded-2xl p-8 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-2"
-              >
-                <Quote className="text-primary/30 mb-6 group-hover:text-primary/50 transition-colors" size={36} />
-                <p className="text-slate-700 leading-relaxed mb-6">"{t.quote}"</p>
-                <div className="border-t border-slate-200 pt-6">
-                  <p className="font-bold text-slate-900 text-lg">{t.name}</p>
-                  <p className="text-primary text-sm font-semibold">{t.role}</p>
-                  <p className="text-slate-500 text-sm">{t.company}</p>
+          <div className="mt-16">
+            <CardSlider
+              items={testimonials}
+              ariaLabel="Client testimonials slider"
+              renderItem={(t) => (
+                <div className="group bg-white border border-slate-200 rounded-2xl p-8 h-full hover:border-primary/30 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-2">
+                  <Quote className="text-primary/30 mb-6 group-hover:text-primary/50 transition-colors" size={36} />
+                  <p className="text-slate-700 leading-relaxed mb-6">"{t.quote}"</p>
+                  <div className="border-t border-slate-200 pt-6">
+                    <p className="font-bold text-slate-900 text-lg">{t.name}</p>
+                    <p className="text-primary text-sm font-semibold">{t.role}</p>
+                    <p className="text-slate-500 text-sm">{t.company}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )}
+            />
           </div>
         </div>
       </section>

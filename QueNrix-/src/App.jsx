@@ -11,6 +11,7 @@ import Services from "./pages/Service.jsx";
 import ServiceDetail from "./pages/ServiceDetail.jsx";
 import Training from "./pages/Traning.jsx";
 import TrainingToolDetail from "./pages/TrainingToolDetail.jsx";
+import GetStarted from "./pages/GetStarted.jsx";
 import Portfolio from "./pages/Portfolio.jsx";
 import Contact from "./pages/Contact.jsx";
 import FAQ from "./pages/FAQ.jsx";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/training" element={<Training />} />
           <Route path="/training/tools/:slug" element={<TrainingToolDetail />} />
+          <Route path="/get-started" element={<GetStarted />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />

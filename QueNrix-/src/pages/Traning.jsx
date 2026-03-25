@@ -288,7 +288,7 @@ const Training = () => {
   return (
     <div className="pt-16 bg-white">
       {/* Header */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <SectionHeading
             label="Training"
@@ -296,11 +296,11 @@ const Training = () => {
             description="Industry-led courses designed by professionals and taught by experts. Accelerate your career in design, development, and digital strategy."
           />
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-2 gap-6 mb-16 md:grid-cols-4">
             {trainingStats.map((stat, i) => (
-              <div key={i} className="bg-white border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <stat.icon size={28} className="text-primary mx-auto mb-3" />
-                <p className="text-2xl font-bold text-slate-900 mb-1">{stat.value}</p>
+              <div key={i} className="p-6 text-center transition-all duration-300 bg-white border border-slate-300 rounded-xl hover:-translate-y-2 hover:shadow-xl">
+                <stat.icon size={28} className="mx-auto mb-3 text-primary" />
+                <p className="mb-1 text-2xl font-bold text-slate-900">{stat.value}</p>
                 <p className="text-xs text-slate-600">{stat.label}</p>
               </div>
             ))}
@@ -312,38 +312,38 @@ const Training = () => {
               title="Category-Wise Training Information"
               description="Click any category to jump to complete tool-level information and learning coverage."
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-8">
+            <div className="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-5">
               {techTracks.map((track) => (
                 <a
                   key={track.id}
                   href={`#${track.id}`}
-                  className="bg-white border border-slate-300 rounded-xl p-4 hover:border-primary/40 hover:shadow-md transition-all"
+                  className="p-4 transition-all bg-white border border-slate-300 rounded-xl hover:border-primary/40 hover:shadow-md"
                 >
-                  <h4 className="text-sm font-bold text-slate-900 mb-1">{track.title}</h4>
-                  <p className="text-xs text-slate-600 mb-2">{track.tools.length} tools covered</p>
-                  <p className="text-xs text-primary font-medium">View details</p>
+                  <h4 className="mb-1 text-sm font-bold text-slate-900">{track.title}</h4>
+                  <p className="mb-2 text-xs text-slate-600">{track.tools.length} tools covered</p>
+                  <p className="text-xs font-medium text-primary">View details</p>
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="space-y-8 mb-16">
+          <div className="mb-16 space-y-8">
             {techTracks.map((track) => (
-              <section key={track.id} id={track.id} className="bg-white border border-slate-300 rounded-2xl p-6 sm:p-8 scroll-mt-28">
+              <section key={track.id} id={track.id} className="p-6 bg-white border border-slate-300 rounded-2xl sm:p-8 scroll-mt-28">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{track.title}</h3>
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900">{track.title}</h3>
                   <p className="text-slate-600">{track.subtitle}</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {track.tools.map((tool) => (
                     <Link
                       key={tool.name}
                       to={`/training/tools/${slugifyToolName(tool.name)}`}
-                      className="bg-slate-50 border border-slate-200 rounded-xl p-4 hover:border-primary/40 hover:bg-white hover:shadow-sm transition-all block"
+                      className="block p-4 transition-all border bg-slate-50 border-slate-200 rounded-xl hover:border-primary/40 hover:bg-white hover:shadow-sm"
                     >
-                      <h4 className="text-sm font-semibold text-slate-900 mb-1">{tool.name}</h4>
-                      <p className="text-xs text-slate-600 leading-relaxed">{tool.info}</p>
-                      <p className="text-xs text-primary font-medium mt-3">Open full details</p>
+                      <h4 className="mb-1 text-sm font-semibold text-slate-900">{tool.name}</h4>
+                      <p className="text-xs leading-relaxed text-slate-600">{tool.info}</p>
+                      <p className="mt-3 text-xs font-medium text-primary">Open full details</p>
                     </Link>
                   ))}
                 </div>
@@ -352,7 +352,7 @@ const Training = () => {
           </div>
 
           {/* Courses */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {courses.map((course, i) => (
               <CourseCard key={i} index={i} {...course} />
             ))}
@@ -364,14 +364,14 @@ const Training = () => {
               title="Choose Your Professional Roadmap"
               description="Structured learning paths designed for high-demand roles in AI, data, cloud, DevOps, and full-stack development."
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
               {careerPaths.map((path) => (
-                <div key={path.title} className="bg-white border border-slate-300 rounded-xl p-6 hover:shadow-md transition-all">
-                  <h4 className="text-lg font-bold text-slate-900 mb-2">{path.title}</h4>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-4">{path.focus}</p>
+                <div key={path.title} className="p-6 transition-all bg-white border border-slate-300 rounded-xl hover:shadow-md">
+                  <h4 className="mb-2 text-lg font-bold text-slate-900">{path.title}</h4>
+                  <p className="mb-4 text-sm leading-relaxed text-slate-600">{path.focus}</p>
                   <div className="flex flex-wrap gap-2">
                     {path.roles.map((role) => (
-                      <span key={role} className="px-3 py-1 text-xs rounded-full border border-primary/30 bg-primary/10 text-primary font-medium">
+                      <span key={role} className="px-3 py-1 text-xs font-medium border rounded-full border-primary/30 bg-primary/10 text-primary">
                         {role}
                       </span>
                     ))}
@@ -384,59 +384,59 @@ const Training = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="px-4 py-24 sm:px-6 lg:px-8 bg-slate-50">
         <div className="container mx-auto">
           <SectionHeading label="How It Works" title="Your Learning Journey" description="A structured, hands-on learning experience from enrollment to certification." />
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid max-w-4xl grid-cols-1 gap-6 mx-auto md:grid-cols-4">
             {[
               { step: "01", title: "Choose a Course", desc: "Browse our catalog and select the course that matches your goals and experience level." },
               { step: "02", title: "Learn & Practice", desc: "Engage with video lessons, live workshops, and hands-on projects with mentor feedback." },
               { step: "03", title: "Build a Portfolio", desc: "Complete real-world capstone projects that showcase your skills to potential employers." },
               { step: "04", title: "Get Certified", desc: "Earn a QueNrix certificate recognized by our network of 100+ hiring partners." },
             ].map((item, i) => (
-              <div key={i} className="bg-white border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <div key={i} className="p-6 text-center transition-all duration-300 bg-white border border-slate-300 rounded-xl hover:-translate-y-2 hover:shadow-xl">
                 <span className="text-2xl font-bold text-primary">{item.step}</span>
-                <h4 className="font-semibold text-slate-900 mt-2 mb-2">{item.title}</h4>
+                <h4 className="mt-2 mb-2 font-semibold text-slate-900">{item.title}</h4>
                 <p className="text-xs text-slate-600">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto mt-14 bg-white border border-slate-300 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-slate-900 mb-5 text-center">Program Highlights</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="max-w-5xl p-8 mx-auto bg-white border mt-14 border-slate-300 rounded-2xl">
+            <h3 className="mb-5 text-2xl font-bold text-center text-slate-900">Program Highlights</h3>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {programHighlights.map((item) => (
-                <div key={item} className="flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-lg p-4">
+                <div key={item} className="flex items-start gap-3 p-4 border rounded-lg bg-slate-50 border-slate-200">
                   <CheckCircle size={18} className="text-primary mt-0.5" />
-                  <p className="text-sm text-slate-700 leading-relaxed">{item}</p>
+                  <p className="text-sm leading-relaxed text-slate-700">{item}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="max-w-6xl mx-auto mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white border border-slate-300 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-5">Placement & Career Support</h3>
+          <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto mt-14 lg:grid-cols-2">
+            <div className="p-8 bg-white border border-slate-300 rounded-2xl">
+              <h3 className="mb-5 text-2xl font-bold text-slate-900">Placement & Career Support</h3>
               <div className="space-y-4">
                 {placementSupport.map((item) => (
-                  <div key={item.title} className="flex items-start gap-4 bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <div key={item.title} className="flex items-start gap-4 p-4 border rounded-lg bg-slate-50 border-slate-200">
                     <item.icon size={20} className="text-primary mt-0.5" />
                     <div>
-                      <h4 className="text-sm font-semibold text-slate-900 mb-1">{item.title}</h4>
-                      <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                      <h4 className="mb-1 text-sm font-semibold text-slate-900">{item.title}</h4>
+                      <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white border border-slate-300 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-5">Training FAQs</h3>
+            <div className="p-8 bg-white border border-slate-300 rounded-2xl">
+              <h3 className="mb-5 text-2xl font-bold text-slate-900">Training FAQs</h3>
               <div className="space-y-4">
                 {trainingFaqs.map((item, i) => (
-                  <div key={i} className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                    <h4 className="text-sm font-semibold text-slate-900 mb-1">{item.q}</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.a}</p>
+                  <div key={i} className="p-4 border rounded-lg bg-slate-50 border-slate-200">
+                    <h4 className="mb-1 text-sm font-semibold text-slate-900">{item.q}</h4>
+                    <p className="text-sm leading-relaxed text-slate-600">{item.a}</p>
                   </div>
                 ))}
               </div>
@@ -445,187 +445,11 @@ const Training = () => {
         </div>
       </section>
 
-      {/* ── Apply Forms Section ── */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="container mx-auto">
-          <SectionHeading
-            label="Apply Now"
-            title="Start Your Journey With Us"
-            description="Apply for a course, classes, or internship — our team will get back to you within 24 hours."
-          />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto mt-10">
-
-            {/* ── Course / Classes Enrollment Form ── */}
-            <div>
-              <form onSubmit={handleCourseSubmit} className="bg-white border border-slate-300 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Course Enrollment</h3>
-
-                {courseSubmitted && (
-                  <div className="flex items-center gap-2 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-700 mb-6">
-                    <CheckCircle size={20} />
-                    Your application has been submitted successfully!
-                  </div>
-                )}
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Full Name <span className="text-red-600">*</span></label>
-                    <input className={inputClass(courseErrors.name)} placeholder="Your full name" value={courseForm.name} onChange={e => setCourseForm(p => ({...p, name: e.target.value}))} />
-                    {courseErrors.name && <span className="text-sm text-red-600 mt-1 block">{courseErrors.name}</span>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Email <span className="text-red-600">*</span></label>
-                    <input type="email" className={inputClass(courseErrors.email)} placeholder="you@example.com" value={courseForm.email} onChange={e => setCourseForm(p => ({...p, email: e.target.value}))} />
-                    {courseErrors.email && <span className="text-sm text-red-600 mt-1 block">{courseErrors.email}</span>}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Phone <span className="text-red-600">*</span></label>
-                    <input className={inputClass(courseErrors.phone)} placeholder="+91 XXXXX XXXXX" value={courseForm.phone} onChange={e => setCourseForm(p => ({...p, phone: e.target.value}))} />
-                    {courseErrors.phone && <span className="text-sm text-red-600 mt-1 block">{courseErrors.phone}</span>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Select Course <span className="text-red-600">*</span></label>
-                    <select className={inputClass(courseErrors.course)} value={courseForm.course} onChange={e => setCourseForm(p => ({...p, course: e.target.value}))}>
-                      <option value="">-- Select a course --</option>
-                      {courses.map((c, i) => <option key={i} value={c.title}>{c.title}</option>)}
-                    </select>
-                    {courseErrors.course && <span className="text-sm text-red-600 mt-1 block">{courseErrors.course}</span>}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Learning Mode <span className="text-red-600">*</span></label>
-                    <select className={inputClass(courseErrors.mode)} value={courseForm.mode} onChange={e => setCourseForm(p => ({...p, mode: e.target.value}))}>
-                      <option value="">-- Select mode --</option>
-                      <option value="Online">Online</option>
-                      <option value="Offline">Offline (Hyderabad)</option>
-                      <option value="Hybrid">Hybrid</option>
-                    </select>
-                    {courseErrors.mode && <span className="text-sm text-red-600 mt-1 block">{courseErrors.mode}</span>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Experience Level</label>
-                    <select className={inputClass(false)} value={courseForm.level} onChange={e => setCourseForm(p => ({...p, level: e.target.value}))}>
-                      <option value="">-- Select level --</option>
-                      <option value="Beginner">Beginner</option>
-                      <option value="Intermediate">Intermediate</option>
-                      <option value="Advanced">Advanced</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Additional Message</label>
-                  <textarea rows={4} className={inputClass(false)} placeholder="Any questions or special requirements..." value={courseForm.message} onChange={e => setCourseForm(p => ({...p, message: e.target.value}))} />
-                </div>
-
-                <button type="submit" disabled={courseLoading} className="w-full flex items-center justify-center gap-2 mt-6 py-3 rounded-lg font-semibold hover:scale-[1.02] hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed" style={{ backgroundColor: '#6366f1', color: '#fff' }}>
-                  <Send size={16} /> {courseLoading ? "Submitting..." : "Submit Enrollment"}
-                </button>
-              </form>
-            </div>
-
-            {/* ── Internship Application Form ── */}
-            <div>
-              <form onSubmit={handleInternSubmit} className="bg-white border border-slate-300 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Internship Application</h3>
-
-                {internSubmitted && (
-                  <div className="flex items-center gap-2 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-700 mb-6">
-                    <CheckCircle size={20} />
-                    Your application has been submitted successfully!
-                  </div>
-                )}
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Full Name <span className="text-red-600">*</span></label>
-                    <input className={inputClass(internErrors.name)} placeholder="Your full name" value={internForm.name} onChange={e => setInternForm(p => ({...p, name: e.target.value}))} />
-                    {internErrors.name && <span className="text-sm text-red-600 mt-1 block">{internErrors.name}</span>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Email <span className="text-red-600">*</span></label>
-                    <input type="email" className={inputClass(internErrors.email)} placeholder="you@example.com" value={internForm.email} onChange={e => setInternForm(p => ({...p, email: e.target.value}))} />
-                    {internErrors.email && <span className="text-sm text-red-600 mt-1 block">{internErrors.email}</span>}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Phone <span className="text-red-600">*</span></label>
-                    <input className={inputClass(internErrors.phone)} placeholder="+91 XXXXX XXXXX" value={internForm.phone} onChange={e => setInternForm(p => ({...p, phone: e.target.value}))} />
-                    {internErrors.phone && <span className="text-sm text-red-600 mt-1 block">{internErrors.phone}</span>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Field of Interest <span className="text-red-600">*</span></label>
-                    <select className={inputClass(internErrors.field)} value={internForm.field} onChange={e => setInternForm(p => ({...p, field: e.target.value}))}>
-                      <option value="">-- Select a field --</option>
-                      <option value="Web Development">Web Development</option>
-                      <option value="UI/UX Design">UI/UX Design</option>
-                      <option value="React / Frontend">React / Frontend</option>
-                      <option value="Node.js / Backend">Node.js / Backend</option>
-                      <option value="Digital Marketing">Digital Marketing</option>
-                      <option value="Brand Design">Brand Design</option>
-                      <option value="Content Writing">Content Writing</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    {internErrors.field && <span className="text-sm text-red-600 mt-1 block">{internErrors.field}</span>}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Duration <span className="text-red-600">*</span></label>
-                    <select className={inputClass(internErrors.duration)} value={internForm.duration} onChange={e => setInternForm(p => ({...p, duration: e.target.value}))}>
-                      <option value="">-- Select duration --</option>
-                      <option value="1 Month">1 Month</option>
-                      <option value="2 Months">2 Months</option>
-                      <option value="3 Months">3 Months</option>
-                      <option value="6 Months">6 Months</option>
-                    </select>
-                    {internErrors.duration && <span className="text-sm text-red-600 mt-1 block">{internErrors.duration}</span>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Availability</label>
-                    <select className={inputClass(false)} value={internForm.availability} onChange={e => setInternForm(p => ({...p, availability: e.target.value}))}>
-                      <option value="">-- Select availability --</option>
-                      <option value="Full-time">Full-time</option>
-                      <option value="Part-time">Part-time</option>
-                      <option value="Weekends Only">Weekends Only</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Portfolio / GitHub URL</label>
-                  <input className={inputClass(false)} placeholder="https://github.com/yourprofile" value={internForm.portfolio} onChange={e => setInternForm(p => ({...p, portfolio: e.target.value}))} />
-                </div>
-
-                <div className="mt-6">
-                  <label className="block text-sm font-medium text-slate-700 mb-2">About Yourself <span className="text-red-600">*</span></label>
-                  <textarea rows={4} className={inputClass(internErrors.about)} placeholder="Tell us about your skills, goals, and why you want to intern at QueNrix..." value={internForm.about} onChange={e => setInternForm(p => ({...p, about: e.target.value}))} />
-                  {internErrors.about && <span className="text-sm text-red-600 mt-1 block">{internErrors.about}</span>}
-                </div>
-
-                <button type="submit" disabled={internLoading} className="w-full flex items-center justify-center gap-2 mt-6 py-3 rounded-lg font-semibold hover:scale-[1.02] hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed" style={{ backgroundColor: '#6366f1', color: '#fff' }}>
-                  <Send size={16} /> {internLoading ? "Submitting..." : "Submit Application"}
-                </button>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Not Sure Which Course Is Right for You?</h2>
-          <p className="text-slate-600 max-w-xl mx-auto mb-8">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl text-slate-900">Not Sure Which Course Is Right for You?</h2>
+          <p className="max-w-xl mx-auto mb-8 text-slate-600">
             Book a free 15-minute consultation with one of our learning advisors. We'll help you find the perfect course based on your goals and background.
           </p>
           <Link to="/contact" className="inline-flex px-8 py-3.5 rounded-lg font-semibold hover:scale-105 hover:shadow-xl transition-all" style={{ backgroundColor: '#6366f1', color: '#ffffff' }}>

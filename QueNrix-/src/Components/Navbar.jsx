@@ -124,7 +124,7 @@ const Navbar = () => {
           {/* Desktop Button */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              to="/contact"
+              to="/get-started"
               className="px-6 py-3 rounded-xl font-black text-white bg-indigo-500 hover:bg-indigo-600 hover:text-white shadow-lg hover:shadow-xl transition"
             >
               Get Started
@@ -210,7 +210,7 @@ const Navbar = () => {
             ))}
 
             <Link
-              to="/contact"
+              to="/get-started"
               onClick={() => setIsOpen(false)}
               className="block mt-4 py-3 px-4 rounded-lg text-center font-black text-white bg-indigo-500 hover:bg-indigo-600 shadow-lg hover:shadow-xl transition"
             >

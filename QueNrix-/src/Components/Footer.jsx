@@ -33,7 +33,7 @@ const Footer = () => {
               We craft digital experiences that inspire and transform businesses through innovative design and technology.
             </p>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Trusted by 200+ companies worldwide since 2018. Let us help you build something extraordinary.
+              Trusted by 20+ companies worldwide since 2018. Let us help you build something extraordinary.
             </p>
           </div>
           <div>
