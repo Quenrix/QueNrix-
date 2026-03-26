@@ -109,7 +109,7 @@ const FAQ = () => {
   return (
     <div className="pt-16 bg-white min-h-screen">
       {/* Hero */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-slate-50 to-white">
         <div className="container mx-auto text-center max-w-3xl">
           <div className="flex items-center justify-center mb-6">
             <HelpCircle size={48} className="text-primary" />
@@ -164,7 +164,7 @@ const FAQ = () => {
             filteredFAQs.map((cat, catIndex) => (
               <div key={catIndex} className="mb-12">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                  <span className="w-1 h-8 bg-gradient-to-b from-primary to-secondary rounded-full"></span>
+                  <span className="w-1 h-8 bg-linear-to-b from-primary to-secondary rounded-full"></span>
                   {cat.category}
                 </h2>
                 <div className="space-y-4">
@@ -185,9 +185,9 @@ const FAQ = () => {
                             {faq.q}
                           </span>
                           {isOpen ? (
-                            <ChevronUp className="text-primary flex-shrink-0" size={20} />
+                            <ChevronUp className="text-primary shrink-0" size={20} />
                           ) : (
-                            <ChevronDown className="text-slate-500 flex-shrink-0" size={20} />
+                            <ChevronDown className="text-slate-500 shrink-0" size={20} />
                           )}
                         </button>
                         {isOpen && (
@@ -208,7 +208,7 @@ const FAQ = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-secondary to-accent">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-primary via-secondary to-accent">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Still Have Questions?

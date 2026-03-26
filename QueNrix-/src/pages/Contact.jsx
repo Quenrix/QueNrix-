@@ -108,34 +108,33 @@ const Contact = () => {
   return (
     <div className="pt-16 bg-white">
       {/* Intro */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <SectionHeading
-            label="Contact"
             title="Let's Work Together"
             description="Have a project in mind? Reach out and let's start a conversation. We respond to every inquiry within 24 hours."
           />
         </div>
       </section>
 
-      <section className="pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="px-4 pb-20 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto lg:grid-cols-2">
             {/* Form */}
             <div>
-              <form onSubmit={handleSubmit} className="bg-white border border-slate-300 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Send Us a Message</h3>
+              <form onSubmit={handleSubmit} className="p-8 bg-white border border-slate-300 rounded-xl">
+                <h3 className="mb-6 text-2xl font-bold text-slate-900">Send Us a Message</h3>
                 
                 {submitted && (
-                  <div className="flex items-center gap-2 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-700 mb-6">
+                  <div className="flex items-center gap-2 p-4 mb-6 text-green-700 border rounded-lg bg-green-500/10 border-green-500/30">
                     <CheckCircle size={20} />
                     Your message has been sent successfully!
                   </div>
                 )}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label className="block mb-2 text-sm font-medium text-slate-700">
                       Name <span className="text-red-600">*</span>
                     </label>
                     <input
@@ -145,11 +144,11 @@ const Contact = () => {
                       className={`w-full px-4 py-3 rounded-lg bg-white border ${errors.name ? 'border-red-500' : 'border-slate-300'} text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary transition-colors`}
                       placeholder="Your full name"
                     />
-                    {errors.name && <span className="text-sm text-red-600 mt-1 block">{errors.name}</span>}
+                    {errors.name && <span className="block mt-1 text-sm text-red-600">{errors.name}</span>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label className="block mb-2 text-sm font-medium text-slate-700">
                       Email <span className="text-red-600">*</span>
                     </label>
                     <input
@@ -159,28 +158,28 @@ const Contact = () => {
                       className={`w-full px-4 py-3 rounded-lg bg-white border ${errors.email ? 'border-red-500' : 'border-slate-300'} text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary transition-colors`}
                       placeholder="you@example.com"
                     />
-                    {errors.email && <span className="text-sm text-red-600 mt-1 block">{errors.email}</span>}
+                    {errors.email && <span className="block mt-1 text-sm text-red-600">{errors.email}</span>}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Company</label>
+                    <label className="block mb-2 text-sm font-medium text-slate-700">Company</label>
                     <input
                       type="text"
                       value={form.company}
                       onChange={(e) => setForm({ ...form, company: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 transition-colors bg-white border rounded-lg border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary"
                       placeholder="Your company name"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Budget Range</label>
+                    <label className="block mb-2 text-sm font-medium text-slate-700">Budget Range</label>
                     <select
                       value={form.budget}
                       onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 transition-colors bg-white border rounded-lg border-slate-300 text-slate-900 focus:outline-none focus:border-primary"
                     >
                       <option value="">Select a range</option>
                       <option value="5k-10k">$5,000 – $10,000</option>
@@ -192,7 +191,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <label className="block mb-2 text-sm font-medium text-slate-700">
                     Message <span className="text-red-600">*</span>
                   </label>
                   <textarea
@@ -201,15 +200,15 @@ const Contact = () => {
                     className={`w-full px-4 py-3 rounded-lg bg-white border ${errors.message ? 'border-red-500' : 'border-slate-300'} text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary transition-colors min-h-37.5`}
                     placeholder="Tell us about your project — goals, timeline, and anything else we should know..."
                   />
-                  {errors.message && <span className="text-sm text-red-400 mt-1 block">{errors.message}</span>}
+                  {errors.message && <span className="block mt-1 text-sm text-red-400">{errors.message}</span>}
                 </div>
 
-                <button type="submit" disabled={loading} className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold hover:scale-105 transition-transform shadow-lg disabled:opacity-70 disabled:cursor-not-allowed" style={{ backgroundColor: '#6366f1', color: '#ffffff' }}>
+                <button type="submit" disabled={loading} className="flex items-center justify-center w-full gap-2 px-8 py-4 font-semibold transition-transform rounded-lg shadow-lg hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed" style={{ backgroundColor: '#6366f1', color: '#ffffff' }}>
                   <Send size={20} />
                   {loading ? "Sending..." : "Send Message"}
                 </button>
                 
-                <p className="text-center text-slate-600 text-sm mt-4">
+                <p className="mt-4 text-sm text-center text-slate-600">
                   We'll respond within 24 hours. No spam, ever.
                 </p>
               </form>
@@ -217,51 +216,51 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <div className="bg-white border border-slate-300 rounded-xl p-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <div className="p-6 bg-white border border-slate-300 rounded-xl">
+                <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
                   <Mail className="text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">Email Us</h3>
-                <a href="mailto:quenrix46@gmail.com" className="text-primary hover:text-secondary transition-colors">quenrix46@gmail.com</a>
+                <h3 className="mb-2 text-lg font-semibold text-slate-900">Email Us</h3>
+                <a href="mailto:quenrix46@gmail.com" className="transition-colors text-primary hover:text-secondary">quenrix46@gmail.com</a>
               </div>
 
-              <div className="bg-white border border-slate-300 rounded-xl p-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <div className="p-6 bg-white border border-slate-300 rounded-xl">
+                <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
                   <Phone className="text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">Call Us</h3>
-                <a href="tel:+919392096698" className="text-primary hover:text-secondary transition-colors">+91 93920 96698</a>
+                <h3 className="mb-2 text-lg font-semibold text-slate-900">Call Us</h3>
+                <a href="tel:+919392096698" className="transition-colors text-primary hover:text-secondary">+91 93920 96698</a>
               </div>
 
-              <div className="bg-white border border-slate-300 rounded-xl p-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <div className="p-6 bg-white border border-slate-300 rounded-xl">
+                <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
                   <MapPin className="text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">Visit Us</h3>
+                <h3 className="mb-2 text-lg font-semibold text-slate-900">Visit Us</h3>
                 <p className="text-slate-600">Hyderabad, Telangana<br />500038, IN</p>
               </div>
 
-              <div className="bg-white border border-slate-300 rounded-xl p-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <div className="p-6 bg-white border border-slate-300 rounded-xl">
+                <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
                   <Clock className="text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">Business Hours</h3>
+                <h3 className="mb-2 text-lg font-semibold text-slate-900">Business Hours</h3>
                 <p className="text-slate-600">Mon – Fri: 9:00 AM – 6:00 PM (PST)</p>
               </div>
 
-              <div className="bg-white border border-slate-300 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">Follow Us</h3>
+              <div className="p-6 bg-white border border-slate-300 rounded-xl">
+                <h3 className="mb-4 text-lg font-semibold text-slate-900">Follow Us</h3>
                 <div className="flex gap-3">
-                  <a href="https://twitter.com/quenrix" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-slate-600 cursor-pointer" aria-label="Twitter">
+                  <a href="https://twitter.com/quenrix" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 border rounded-lg cursor-pointer bg-slate-100 border-slate-300 text-slate-600" aria-label="Twitter">
                     <Twitter size={18} />
                   </a>
-                  <a href="https://www.linkedin.com/company/quenrix/about/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-slate-600 cursor-pointer" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/company/quenrix/about/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 border rounded-lg cursor-pointer bg-slate-100 border-slate-300 text-slate-600" aria-label="LinkedIn">
                     <Linkedin size={18} />
                   </a>
-                  <a href="https://github.com/quenrix" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-slate-600 cursor-pointer" aria-label="GitHub">
+                  <a href="https://github.com/quenrix" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 border rounded-lg cursor-pointer bg-slate-100 border-slate-300 text-slate-600" aria-label="GitHub">
                     <Github size={18} />
                   </a>
-                  <a href="https://instagram.com/quenrix" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-slate-600 cursor-pointer" aria-label="Instagram">
+                  <a href="https://instagram.com/quenrix" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 border rounded-lg cursor-pointer bg-slate-100 border-slate-300 text-slate-600" aria-label="Instagram">
                     <Instagram size={18} />
                   </a>
                 </div>
@@ -272,19 +271,18 @@ const Contact = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="px-4 py-24 sm:px-6 lg:px-8 bg-slate-50">
         <div className="container mx-auto">
           <SectionHeading 
-            label="FAQ" 
             title="Frequently Asked Questions" 
             description="Quick answers to common questions about working with us." 
           />
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white border border-slate-300 rounded-xl overflow-hidden">
+              <div key={i} className="overflow-hidden bg-white border border-slate-300 rounded-xl">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
+                  className="flex items-center justify-between w-full p-6 text-left transition-colors hover:bg-slate-50"
                 >
                   <span className="font-semibold text-slate-900">{faq.q}</span>
                   <ChevronDown className={`text-primary shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />

@@ -15,9 +15,9 @@ const ServiceDetail = () => {
 
   if (!service) {
     return (
-      <div className="pt-16 min-h-screen flex flex-col items-center justify-center gap-4">
-        <p className="text-slate-600 text-lg">Service not found.</p>
-        <Link to="/services" className="text-primary underline">Back to Services</Link>
+      <div className="flex flex-col items-center justify-center min-h-screen gap-4 pt-16">
+        <p className="text-lg text-slate-600">Service not found.</p>
+        <Link to="/services" className="underline text-primary">Back to Services</Link>
       </div>
     );
   }
@@ -27,52 +27,52 @@ const ServiceDetail = () => {
   const next = services[currentIndex + 1] || null;
 
   return (
-    <div className="pt-16 bg-white min-h-screen">
+    <div className="min-h-screen pt-16 bg-white">
 
       {/* Hero */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 border-b border-slate-200">
-        <div className="container mx-auto max-w-5xl">
+      <section className="px-4 py-20 border-b sm:px-6 lg:px-8 bg-slate-50 border-slate-200">
+        <div className="container max-w-5xl mx-auto">
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary mb-8 transition-colors"
+            className="inline-flex items-center gap-2 mb-8 text-sm transition-colors text-slate-500 hover:text-primary"
           >
             <ArrowLeft size={15} /> Back to All Services
           </Link>
-          <div className="flex flex-col md:flex-row md:items-center gap-6">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center">
+            <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 shrink-0">
               <service.icon size={32} className="text-primary" />
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-1">{service.tagline}</p>
-              <h1 className="text-3xl md:text-4xl font-bold text-slate-900">{service.title}</h1>
+              <p className="mb-1 text-xs font-semibold tracking-widest uppercase text-primary">{service.tagline}</p>
+              <h1 className="text-3xl font-bold md:text-4xl text-slate-900">{service.title}</h1>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-5xl">
-          <div className="flex flex-col lg:flex-row gap-12">
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="container max-w-5xl mx-auto">
+          <div className="flex flex-col gap-12 lg:flex-row">
 
             {/* Left */}
             <div className="flex-1">
-              <h2 className="text-xl font-bold text-slate-900 mb-4">Overview</h2>
-              <p className="text-slate-600 leading-relaxed mb-10 text-base">{service.description}</p>
+              <h2 className="mb-4 text-xl font-bold text-slate-900">Overview</h2>
+              <p className="mb-10 text-base leading-relaxed text-slate-600">{service.description}</p>
 
-              <h2 className="text-xl font-bold text-slate-900 mb-5">What's Included</h2>
-              <div className="space-y-4 mb-10">
+              <h2 className="mb-5 text-xl font-bold text-slate-900">What's Included</h2>
+              <div className="mb-10 space-y-4">
                 {service.details.map((detail, i) => (
-                  <div key={i} className="flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <div key={i} className="flex items-start gap-3 p-4 border rounded-lg bg-slate-50 border-slate-200">
                     <CheckCircle size={17} className="text-primary mt-0.5 shrink-0" />
-                    <p className="text-sm text-slate-700 leading-relaxed">{detail}</p>
+                    <p className="text-sm leading-relaxed text-slate-700">{detail}</p>
                   </div>
                 ))}
               </div>
 
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2 py-3 font-semibold transition-all rounded-lg px-7 hover:scale-105 hover:shadow-lg"
                 style={{ backgroundColor: "#6366f1", color: "#ffffff" }}
               >
                 Get Started →
@@ -81,11 +81,11 @@ const ServiceDetail = () => {
 
             {/* Right */}
             <div className="lg:w-72 shrink-0">
-              <div className="bg-white border border-slate-300 rounded-xl p-6 mb-6">
-                <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">Key Capabilities</h3>
+              <div className="p-6 mb-6 bg-white border border-slate-300 rounded-xl">
+                <h3 className="mb-4 text-sm font-semibold tracking-wide uppercase text-slate-900">Key Capabilities</h3>
                 <div className="grid grid-cols-2 gap-3">
                   {service.features.map((feat, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg p-3">
+                    <div key={i} className="flex items-center gap-2 p-3 border rounded-lg bg-slate-50 border-slate-200">
                       <feat.icon size={15} className="text-primary shrink-0" />
                       <span className="text-xs font-medium text-slate-700">{feat.text}</span>
                     </div>
@@ -93,8 +93,8 @@ const ServiceDetail = () => {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-300 rounded-xl p-6">
-                <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">Other Services</h3>
+              <div className="p-6 bg-white border border-slate-300 rounded-xl">
+                <h3 className="mb-4 text-sm font-semibold tracking-wide uppercase text-slate-900">Other Services</h3>
                 <div className="flex flex-col gap-1">
                   {services
                     .filter((s) => s.id !== id)
@@ -102,7 +102,7 @@ const ServiceDetail = () => {
                       <Link
                         key={s.id}
                         to={`/services/${s.id}`}
-                        className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary py-2 border-b border-slate-100 last:border-0 transition-colors"
+                        className="flex items-center gap-2 py-2 text-sm transition-colors border-b text-slate-600 hover:text-primary border-slate-100 last:border-0"
                       >
                         <s.icon size={13} className="shrink-0" />
                         {s.title}
@@ -117,13 +117,15 @@ const ServiceDetail = () => {
       </section>
 
       {/* Prev / Next Navigation */}
-      <section className="py-10 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
-        <div className="container mx-auto max-w-5xl flex items-center justify-between gap-4">
+      <section className="px-4 py-10 border-t sm:px-6 lg:px-8 border-slate-200">
+        <div className="container flex items-center justify-between max-w-5xl gap-4 mx-auto">
           {prev ? (
             <Link
               to={`/services/${prev.id}`}
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors"
-            >
+              className="flex items-center gap-2 text-sm font-medium transition-colors text-slate-600 hover:text-primary"
+            >PRACTICAL AI FOR REAL BUSINESS OUTCOMES
+
+
               <ArrowLeft size={16} />
               <span>{prev.title}</span>
             </Link>
@@ -131,7 +133,7 @@ const ServiceDetail = () => {
           {next ? (
             <Link
               to={`/services/${next.id}`}
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-sm font-medium transition-colors text-slate-600 hover:text-primary"
             >
               <span>{next.title}</span>
               <ArrowRight size={16} />

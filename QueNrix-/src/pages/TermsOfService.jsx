@@ -146,10 +146,10 @@ const TermsOfService = () => {
   ];
 
   return (
-    <div className="pt-16 bg-white min-h-screen">
+    <div className="min-h-screen pt-16 bg-white">
       {/* Hero */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container mx-auto text-center max-w-3xl">
+      <section className="px-4 py-24 sm:px-6 lg:px-8 bg-linear-to-b from-slate-50 to-white">
+        <div className="container max-w-3xl mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
             <Scale size={48} className="text-primary" />
           </div>
@@ -158,20 +158,20 @@ const TermsOfService = () => {
             title="Our Terms & Conditions"
             description="Please read these terms carefully before using our services. By accessing or using QueNrix's services, you agree to be bound by these terms."
           />
-          <p className="text-slate-600 mt-4">
+          <p className="mt-4 text-slate-600">
             Last Updated: <span className="font-semibold text-slate-900">{lastUpdated}</span>
           </p>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl">
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="container max-w-4xl mx-auto">
           <div className="space-y-16">
             {sections.map((section, index) => (
               <div key={index} className="animate-fade-in">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                  <div className="flex items-center justify-center w-12 h-12 text-white rounded-xl bg-linear-to-br from-primary to-secondary">
                     <section.icon size={24} />
                   </div>
                   <h2 className="text-2xl font-bold text-slate-900">
@@ -179,15 +179,15 @@ const TermsOfService = () => {
                   </h2>
                 </div>
                 
-                <div className="space-y-6 pl-16">
+                <div className="pl-16 space-y-6">
                   {section.content.map((item, idx) => (
                     <div key={idx}>
                       {item.subtitle && (
-                        <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                        <h3 className="mb-2 text-lg font-semibold text-slate-900">
                           {item.subtitle}
                         </h3>
                       )}
-                      <p className="text-slate-600 leading-relaxed">
+                      <p className="leading-relaxed text-slate-600">
                         {item.text}
                       </p>
                     </div>
@@ -198,11 +198,11 @@ const TermsOfService = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="mt-16 p-8 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20">
-            <h3 className="text-xl font-bold text-slate-900 mb-3">
+          <div className="p-8 mt-16 border rounded-xl bg-linear-to-r from-primary/10 to-secondary/10 border-primary/20">
+            <h3 className="mb-3 text-xl font-bold text-slate-900">
               Questions About These Terms?
             </h3>
-            <p className="text-slate-600 mb-4">
+            <p className="mb-4 text-slate-600">
               If you have any questions about these Terms of Service, please contact us at:
             </p>
             <div className="space-y-2 text-slate-700">
@@ -213,11 +213,11 @@ const TermsOfService = () => {
           </div>
 
           {/* Acknowledgment */}
-          <div className="mt-8 p-6 rounded-xl bg-amber-50 border border-amber-200">
+          <div className="p-6 mt-8 border rounded-xl bg-amber-50 border-amber-200">
             <div className="flex items-start gap-3">
-              <AlertCircle className="text-amber-600 flex-shrink-0 mt-1" size={20} />
+              <AlertCircle className="mt-1 -flex-shrink-0 text-amber-600" size={20} />
               <div>
-                <h4 className="font-semibold text-amber-900 mb-1">
+                <h4 className="mb-1 font-semibold text-amber-900">
                   Important Notice
                 </h4>
                 <p className="text-sm text-amber-800">

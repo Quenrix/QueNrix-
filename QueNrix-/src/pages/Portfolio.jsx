@@ -46,10 +46,9 @@ const Portfolio = () => {
   return (
     <div className="pt-16 bg-white">
       {/* Header */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <SectionHeading
-            label="Portfolio"
             title="Our Recent Work"
             description="A selection of projects we're proud of — each one a story of collaboration, craft, and measurable results. Hover over each project to see details."
           />
@@ -57,8 +56,8 @@ const Portfolio = () => {
       </section>
       {/* Projects Grid */}
       <section className="pb-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="container px-4 mx-auto">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {projects.map((project, i) => (
               <ProjectCard key={i} index={i} {...project} />
             ))}
@@ -66,18 +65,18 @@ const Portfolio = () => {
         </div>
       </section>
       {/* Project Details */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="px-4 py-24 sm:px-6 lg:px-8 bg-slate-50">
         <div className="container mx-auto">
-          <SectionHeading label="Results" title="Impact We've Delivered" description="Numbers that speak louder than words." />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <SectionHeading title="Impact We've Delivered" description="Numbers that speak louder than words." />
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {[
               { value: "3x", label: "Average Revenue Growth" },
               { value: "50%", label: "Faster Load Times" },
               { value: "200%", label: "Increase in User Engagement" },
               { value: "40+", label: "Awards Won by Client Projects" },
             ].map((stat, i) => (
-              <div key={i} className="text-center p-6 bg-white border border-slate-300 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <p className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{stat.value}</p>
+              <div key={i} className="p-6 text-center transition-all duration-300 bg-white border border-slate-300 rounded-xl hover:-translate-y-2 hover:shadow-xl">
+                <p className="mb-2 text-2xl font-bold md:text-3xl text-slate-900">{stat.value}</p>
                 <p className="text-xs text-slate-600">{stat.label}</p>
               </div>
             ))}
@@ -85,12 +84,12 @@ const Portfolio = () => {
         </div>
       </section>
       {/* Trusted By */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <SectionHeading label="Trusted By" title="Companies We've Worked With" />
+          <SectionHeading title="Companies We've Worked With" />
           <div className="flex flex-wrap justify-center gap-6">
             {clientLogos.map((name, i) => (
-              <div key={i} className="px-8 py-4 bg-white border border-slate-300 rounded-xl text-slate-900 font-semibold text-lg hover:text-primary hover:border-primary/30 transition-colors cursor-default">
+              <div key={i} className="px-8 py-4 text-lg font-semibold transition-colors bg-white border cursor-default border-slate-300 rounded-xl text-slate-900 hover:text-primary hover:border-primary/30">
                 {name}
               </div>
             ))}
@@ -98,12 +97,12 @@ const Portfolio = () => {
         </div>
       </section>
       {/* CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="px-4 py-24 sm:px-6 lg:px-8 bg-slate-50">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl text-slate-900">
             Want Your Project Featured Here?
           </h2>
-          <p className="text-slate-600 max-w-xl mx-auto mb-8">
+          <p className="max-w-xl mx-auto mb-8 text-slate-600">
             Let's create something remarkable together. Tell us about your project and we'll show you what's possible.
           </p>
           <Link to="/contact" className="inline-flex px-8 py-3.5 rounded-lg font-semibold hover:scale-105 hover:shadow-xl transition-all" style={{ backgroundColor: '#6366f1', color: '#ffffff' }}>

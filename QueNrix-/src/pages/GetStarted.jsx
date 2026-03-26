@@ -172,7 +172,6 @@ const GetStarted = () => {
       <section className="px-4 py-24 bg-white sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <SectionHeading
-            label="Apply Now"
             title="Start Your Journey With Us"
             description="Apply for a course, classes, or internship - our team will get back to you within 24 hours."
           />

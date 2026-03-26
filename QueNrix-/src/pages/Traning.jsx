@@ -291,7 +291,6 @@ const Training = () => {
       <section className="px-4 py-24 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <SectionHeading
-            label="Training"
             title="Level Up Your Skills"
             description="Industry-led courses designed by professionals and taught by experts. Accelerate your career in design, development, and digital strategy."
           />
@@ -308,7 +307,6 @@ const Training = () => {
 
           <div className="mb-14">
             <SectionHeading
-              label="Tools & Technologies"
               title="Category-Wise Training Information"
               description="Click any category to jump to complete tool-level information and learning coverage."
             />
@@ -360,7 +358,6 @@ const Training = () => {
 
           <div className="mt-16">
             <SectionHeading
-              label="Career Paths"
               title="Choose Your Professional Roadmap"
               description="Structured learning paths designed for high-demand roles in AI, data, cloud, DevOps, and full-stack development."
             />
@@ -386,7 +383,7 @@ const Training = () => {
       {/* How It Works */}
       <section className="px-4 py-24 sm:px-6 lg:px-8 bg-slate-50">
         <div className="container mx-auto">
-          <SectionHeading label="How It Works" title="Your Learning Journey" description="A structured, hands-on learning experience from enrollment to certification." />
+          <SectionHeading title="Your Learning Journey" description="A structured, hands-on learning experience from enrollment to certification." />
           <div className="grid max-w-4xl grid-cols-1 gap-6 mx-auto md:grid-cols-4">
             {[
               { step: "01", title: "Choose a Course", desc: "Browse our catalog and select the course that matches your goals and experience level." },
